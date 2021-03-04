@@ -1,80 +1,77 @@
 ---
 lab:
-    title: 'Lab: Deploying Azure Resource Manager templates'
-    module: 'Module 1: Exploring Azure Resource Manager'
+    title: 'Get started with Azure Data Studio'
+    module: 'Module 1: Exploring SQL Server query tools'
 ---
 
-# Lab: Deploying Azure Resource Manager templates
-# Student lab manual
+# Lab: Get started with Azure Data Studio
+ 
+In this exercise, you will use Azure Data Studio to connect to the _MyStore_ database and run a simple query.
 
-## Lab scenario
+## Connect to the lab environment
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lobortis, erat vel egestas faucibus, dui magna semper velit, id congue sapien lectus id turpis. Nam egestas tempus enim. Ut venenatis vehicula ex, id rutrum odio lacinia at. Donec congue, tortor sed fermentum imperdiet, mauris mi auctor dui, ac cursus ex augue a odio. Aliquam erat volutpat. Vivamus faucibus fringilla augue in dignissim. Quisque sit amet nulla id risus gravida auctor. Ut in est varius, cursus odio rhoncus, placerat erat. Suspendisse nec metus est.
+When the VM lab environment opens, use the password on the **Resources** tab above for the **Administrator** account to sign in to Windows.
 
-## Objectives
+## Open Azure Data Studio
 
-After you complete this lab, you will be able to:
+There is an icon in the toolbar to open Azure Data Studio. 
 
-- Cras tincidunt massa et nunc vulputate, eget vestibulum massa tincidunt. 
+![Picture 1](../media/Module1-Unit6-picture1.png)
 
-- Maecenas suscipit at nisl vitae malesuada. 
+Select the icon for Azure Data Studio. The tool will open to a blank query window. 
 
-- Suspendisse eu arcu id velit consequat venenatis.
+## Execute a query
+You are going to run the following query. You can try typing it in directly or you can select File/Open File, and navigate to D:\Lab Code\SQL Server Tools. Double-click on the file script1.sql and it will be loaded into a new query window.
 
-## Lab Setup
+```tsql
+USE MyStore;
 
-  - **Estimated Time**: 00 minutes
+SELECT custid AS CustomerID, YEAR(orderdate) AS OrderYear
 
-## Instructions
+FROM Sales.Orders
 
-### Before you start
+WHERE freight > 500
 
-#### Setup Task
+GROUP BY custid, YEAR(orderdate) 
 
-1. Integer dolor purus, gravida eu sem id, efficitur aliquet neque. 
+HAVING COUNT(*) > 1
 
-1. Suspendisse viverra mauris in metus laoreet consectetur. 
+ORDER BY CustomerID, OrderYear;
+```
 
-1. Sed diam risus, convallis quis condimentum at, egestas malesuada libero. 
+Select the Run button next to the green arrow in the upper left corner.  
 
-### Exercise 0: 
+![Picture 2](../media/Module1-Unit6-picture2.png)
 
-#### Task 0: 
+You will be prompted to connect to your SQL Server. Enter a single dot for the Server, which indicates your default local SQL Server. Because the Authentication type is Windows Authentication, the tool will use your login credentials from Windows and you don't need to enter anything for User name and Password. 
 
-1. Quisque dictum convallis metus, vitae vestibulum turpis dapibus non.
+Select Connect. 
 
-    1. Suspendisse commodo tempor convallis. 
+![Picture 3](../media/Module1-Unit6-picture3.png)
 
-    1. Nunc eget quam facilisis, imperdiet felis ut, blandit nibh. 
+You should see three rows returned in the Results Window. 
 
-    1. Phasellus pulvinar ornare sem, ut imperdiet justo volutpat et.
+Now use your mouse to lightlight just the first four lines of the SELECT statement:
 
-1. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+```tsql
+USE MyStore;
 
-1. Vestibulum hendrerit orci urna, non aliquet eros eleifend vitae. 
+SELECT custid AS CustomerID, YEAR(orderdate) AS OrderYear
 
-1. Curabitur nibh dui, vestibulum cursus neque commodo, aliquet accumsan risus. 
+FROM Sales.Orders
 
-    ```
-    Sed at malesuada orci, eu volutpat ex
-    ```
+WHERE freight > 500
 
-1. In ac odio vulputate, faucibus lorem at, sagittis felis.
+GROUP BY custid, YEAR(orderdate) 
+```
 
-1. Fusce tincidunt sapien nec dolor congue facilisis lacinia quis urna.
+Select the Run button. You should now see 10 rows returned because we are not filtering with the HAVING clause. 
 
-    > **Note**: Ut feugiat est id ultrices gravida.
+Notice that the first line of the script specifies the database to access with the USE command. As an alternative to USE, you can select the dropdown box above the query, and see all the databases within the local SQL Server. 
 
-1. Phasellus urna lacus, luctus at suscipit vitae, maximus ac nisl. 
+![Picture 4](../media/Module1-Unit6-picture4.png)
 
-    - Morbi in tortor finibus, tempus dolor a, cursus lorem. 
+We will only be using the _MyStore_ database. 
 
-    - Maecenas id risus pharetra, viverra elit quis, lacinia odio. 
+To finish this exercise select **Done** below.
 
-    - Etiam rutrum pretium enim. 
-
-1. Curabitur in pretium urna, nec ullamcorper diam. 
-
-#### Review
-
-Maecenas fringilla ac purus non tincidunt. Aenean pellentesque velit id suscipit tempus. Cras at ullamcorper odio.
