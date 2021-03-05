@@ -19,7 +19,9 @@ There is an icon in the toolbar to open Azure Data Studio.
 
 ![Picture 1](../media/Module1-Unit6-picture1.png)
 
-Select the icon for Azure Data Studio. The tool will open to a blank query window. If you get a message in the lower right corner asking ifyou want to enable **Preview features**, you can select either option. 
+Select the icon for Azure Data Studio. The tool will open to a Welcome screen. If you get a message in the lower right corner asking if you want to enable **Preview features**, you can select either option. 
+
+From the **File** menu, select **New Query**. You should now see a blank query window. 
 
 ## Execute simple queries
 The queries will use a sample database called _MyStore_. Although there are about a dozen user tables in this database, we’ll only be working with a couple of them in this exercise. We’ll be using the _Customers_ and the _OrderDetails_ tables. 
