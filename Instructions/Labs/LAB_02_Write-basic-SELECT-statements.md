@@ -36,6 +36,16 @@ USE MyStore;
 SELECT contactname, city
 FROM Sales.Customers;
 ```
+Select the Run button next to the green arrow in the upper left corner.  
+
+![Picture 2](../media/Module1-Unit6-picture2.png)
+
+You will be prompted to connect to your SQL Server. Enter a single dot for the Server, which indicates your default local SQL Server. Because the Authentication type is Windows Authentication, the tool will use your login credentials from Windows and you don't need to enter anything for User name and Password. 
+
+Select **Connect**. 
+
+![Picture 3](../media/Module1-Unit6-picture3.png)
+
 You should get 91 rows back. 
 
 Modify the query to only show the customers in London. You should get six rows back. 
