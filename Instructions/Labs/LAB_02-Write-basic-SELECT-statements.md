@@ -22,7 +22,7 @@ There is an icon in the toolbar to open Azure Data Studio.
 Select the icon for Azure Data Studio. The tool will open to a blank query window. If you get a message in the lower right corner asking ifyou want to enable **Preview features**, you can select either option. 
 
 ## Execute simple queries
-The queries will use a sample database called _MyStore_. Although there are about a dozen user tables in this database, we’ll only be working with a couple of them in this exercise. As with the examples in the Module, we’ll be using the _Customers_ and the _Products_ table. 
+The queries will use a sample database called _MyStore_. Although there are about a dozen user tables in this database, we’ll only be working with a couple of them in this exercise. We’ll be using the _Customers_ and the _OrderDetails_ tables. 
 
 For the queries we are using, you can try typing them in directly or you can select File/Open File, and navigate to D:\Lab Code\Basic SELECT. Double-click on the file script1.sql and it will be loaded into a new query window.
 
@@ -30,24 +30,26 @@ Remember that you can run an entire script at once, which will be multiple queri
 
 Run the following query to return the name and city of all the customers. 
 ```tsql
-USE MyStores;
+USE MyStore;
 SELECT contactname, city
-FROM Sales.Customers
+FROM Sales.Customers;
+```
+You should get 91 rows back. 
+
+Modify the query to only show the customers in London. You should get six rows back. 
+
+Modify the query further to change column headers in the output so that the _contactname_ column is labelled "Customer Name" and the _cty_ column is labelled "Customer City".
+
+Now modify the original query to only show the customer names, with the _city_ and _country_ for all customers who don't have a value for _region_.  You should get 60 rows back. 
+
+Run the following query to return the order ID, product ID, price and quantity of all sales of items costing more than 250. 
+
+```tsql
+SELECT orderid, productid, unitprie, qty
+FROM Sales.OrderDetails
+WHERE UnitPrice > 250;
 ```
 
-Now modify it to only show the customers with the last name of Khan. 
-Now modify to change column headers
-Now modify it to only show the customers with the last name of Khan and no known middle name. 
-
-Run the following query to return the name, listing price and company cost of all products with a list price less than 50. 
-SELECT Name, ListPrice, StandardCost
-FROM SalesLT.product
-WHERE ListPrice < 50;
-Now modify to add another column that is the percentage that our cost is of the listing price. Name that new column Percentage. 
-SELECT Name, ListPrice, StandardCost, StandardCost/ListPrice * 100 as Percentage
-FROM SalesLT.product
-WHERE ListPrice < 50;
-Write a query to list all the distinct last names in the Customer table. 
-
+Now modify this query to add another column that is the product of quantity and price. Name that new column GrossCost.
 
 To finish this exercise select **Done** below.
