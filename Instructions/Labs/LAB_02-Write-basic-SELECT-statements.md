@@ -28,8 +28,13 @@ For the queries we are using, you can try typing them in directly or you can sel
 
 Remember that you can run an entire script at once, which will be multiple queries in this case. Or you can highlight a single query and select the **Run** button to execute just the highlighted query. 
 
-Run the following query to return the first and last names of all the customers. 
-Show query
+Run the following query to return the name and city of all the customers. 
+```tsql
+USE MyStores;
+SELECT contactname, city
+FROM Sales.Customers
+```
+
 Now modify it to only show the customers with the last name of Khan. 
 Now modify to change column headers
 Now modify it to only show the customers with the last name of Khan and no known middle name. 
