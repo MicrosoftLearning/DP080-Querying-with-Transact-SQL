@@ -26,7 +26,7 @@ From the **File** menu, select **New Query**. You should now see a blank query w
 ## Execute simple queries
 The queries will use a sample database called _MyStore_. Although there are about a dozen user tables in this database, we’ll only be working with a couple of them in this exercise. We’ll be using the _Customers_ and the _OrderDetails_ tables. 
 
-For the queries we are using, you can try typing them in directly or you can select File/Open File, and navigate to D:\Lab Code\Basic SELECT. Double-click on the file script1.sql and it will be loaded into a new query window.
+For the queries we are using, you can try typing them in directly or you can select File/Open File, and navigate to D:\Lab Code\Basic SELECT. Double-click on the file script2.sql and it will be loaded into a new query window.
 
 Remember that you can run an entire script at once, which will be multiple queries in this case. Or you can highlight a single query and select the **Run** button to execute just the highlighted query. 
 
