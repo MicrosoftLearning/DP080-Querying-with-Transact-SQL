@@ -52,7 +52,7 @@ Select Connect.
 
 You should see three rows returned in the Results Window. 
 
-
+Notice that just above the results, to the right of the word **Results**, there is a **Messages** tab. You can select that table to see special messages, including the row count. If there are any error messages, they will appear in the **Messages** tab. 
 
 Now use your mouse to lightlight just the first four lines of the SELECT statement:
 
