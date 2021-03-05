@@ -19,7 +19,9 @@ There is an icon in the toolbar to open Azure Data Studio.
 
 ![Picture 1](../media/Module1-Unit6-picture1.png)
 
-Select the icon for Azure Data Studio. The tool will open to a blank query window. If you get a message in the lower right corner asking ifyou want to enable **Preview features**, you can select either option. 
+Select the icon for Azure Data Studio. The tool will open to a Welcome screen. If you get a message in the lower right corner asking if you want to enable **Preview features**, you can select either option. 
+
+From the **File** menu, select **New Query**. You should now see a blank query window. 
 
 ## Execute a query
 You are going to run the following query. You can try typing it in directly or you can select File/Open File, and navigate to D:\Lab Code\SQL Server Tools. Double-click on the file script1.sql and it will be loaded into a new query window.
