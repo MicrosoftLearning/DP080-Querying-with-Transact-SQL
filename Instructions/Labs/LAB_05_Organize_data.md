@@ -32,42 +32,29 @@ For the queries we are using, you can try typing them in directly or you can sel
 
 Remember that you can run an entire script at once, which will be multiple queries in this case. Or you can highlight a single query and select the **Run** button to execute just the highlighted query. 
 
+## Use ORDER BY for sorting results
+
 Write a SELECT statement to retrieve the custid and contactname columns from the Sales.Customers table and the orderid and orderdate columns from the Sales.Orders table. Filter the results to include only orders placed on or after '20210401', which is April 1, 2021 (filter the orderdate column), then sort the result by orderdate in descending order and custid in ascending order.
+
+Your query should return 84 rows. 
 
 You decide you want to give aliases to the column names so you write the following query:
 
+```tsql
+SELECT c.custid AS CustomerID, contactname AS ContactName, orderid AS OrderID, orderdate AS DateOfOrder
+FROM Sales.Customers c JOIN Sales.Orders o
+   ON c.custid = o.custid
+WHERE DateOfOrder > 20210401'
+ORDER BY DateOfOrder DESC, CustomerID;
+```
 
-Need group by examples! 
-3.	Execute the written statement and compare the results that you achieved with the desired results shown in the file D:\Labfiles\Lab05\Solution\62 - Lab Exercise 2 - Task 1 Result.txt.
-  Task 2: Apply the Needed Changes and Execute the T-SQL Statement
-1.	Someone took your T-SQL statement from lab 4 and added the following WHERE clause:
-SELECT
-e.empid, e.lastname, e.firstname, e.title, e.mgrid,
-m.lastname AS mgrlastname, m.firstname AS mgrfirstname
-FROM HR.Employees AS e
-INNER JOIN HR.Employees AS m ON e.mgrid = m.empid
-WHERE mgrlastname = 'Buck';
+You get a error about an invalid column name. What is the problem? 
 
-2.	Execute the query exactly as written inside a query window and observe the result.
-3.	There is an error. What is the error message? Why do you think this happened? (Tip: Remember the logical processing order of the query.)
-4.	Apply the needed changes to the SELECT statement so that it will run without an error. Test the changes by executing the T-SQL statement.
-5.	Observe and compare the results that you achieved with the recommended results shown in the D:\Labfiles\Lab05\Solution\63 - Lab Exercise 2 - Task 2 Result.txt. 
-  Task 3: Order the Result by the firstname Column
-1.	Copy the existing T-SQL statement from task 2 and modify it so that the result will return all employees and be ordered by the manager’s first name. First, try to use the source column name, and then the alias column name.
-2.	Execute the written statement and compare the results that you achieved with the recommended results shown in the file D:\Labfiles\Lab05\Solution\64 - Lab Exercise 2 - Task 3a and 3b Result.txt.
-3.	Why were you able to use a source column or alias column name? 
+## Use the TOP option in the SELECT list
 
-Results: After this exercise, you should know how to use an ORDER BY clause.
-Exercise 3: Write Queries that Filter Data Using the TOP Option
-Scenario
 The sales department wants to have some additional reports that show the last invoiced orders and the top 10 percent of the most expensive products being sold.
-The main tasks for this exercise are as follows:
-1. Writing Queries That Filter Data Using the TOP Clause
-2. Use the OFFSET-FETCH Clause to Implement the Same Task
-3. Write a SELECT Statement to Retrieve the Most Expensive Products
-  Task 1: Writing Queries That Filter Data Using the TOP Clause
-1.	Open the T-SQL script 71 - Lab Exercise 3.sql. Ensure that you are connected to the TSQL database.
-2.	Write a SELECT statement against the Sales.Orders table, and retrieve the orderid and orderdate columns. Retrieve the 20 most recent orders, ordered by orderdate.
+
+Write a SELECT statement against the Sales.Orders table, and retrieve the orderid and orderdate columns. Retrieve the 20 most recent orders, ordered by orderdate.
 3.	Execute the written statement and compare the results that you achieved with the recommended result shown in the file 72 - Lab Exercise 3 - Task 1 Result.txt.
   Task 2: Use the OFFSET-FETCH Clause to Implement the Same Task
 1.	Write a SELECT statement to retrieve the same result as in task 1, but use the OFFSET-FETCH clause.
@@ -79,3 +66,11 @@ The main tasks for this exercise are as follows:
 3.	Modify the SELECT statement to include only the top 10 percent of products based on unitprice ordering.
 4.	Execute the written statement and compare the results that you achieved with the recommended result shown in the file 74 - Lab Exercise 3 - Task 3 Result.txt. Notice the number of rows returned.
 5.	Is it possible to implement this task with the OFFSET-FETCH clause?
+
+Simple group by
+
+GROUP BY with Having
+
+
+
+**Done**
