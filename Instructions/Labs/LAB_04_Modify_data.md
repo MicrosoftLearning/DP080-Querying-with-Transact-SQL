@@ -81,15 +81,12 @@ Run the following query to create a copy of the _Sales.Customers_ table called _
 
 ```tsql
 SELECT * INTO Sales.CustomersTemp
-FROM 
+FROM Sales.Customers
+```
 
+Write an UPDATE statement to update all the records in the _CustomerTemp_ table that have a city of ‘Berlin’ and a contacttitle of ‘Sales Representative’ to have a contacttitle of ‘Sales Consultant’.
 
-
-
-  Task 1: Update Rows
-•	Write an UPDATE statement to update all the records in the _CustomerTemp_ table that have a city of ‘Berlin’ and a contacttitle of ‘Sales Representative’ to have a contacttitle of ‘Sales Consultant’.
-  Task 2: Delete Rows
-•	Write a DELETE statement to delete all the records in the PotentialCustomers table which have the contactname of ‘Taylor, Maurice’, ‘Mallit, Ken’, or ‘Tiano, Mike’, as these records have now been added to the Customers table.
+Write a DELETE statement to delete all the records in the _CustomerTemp_ table which have the contactname of ‘Taylor, Maurice’, ‘Smith, Denise’, or ‘Misiec, Anna’, as these contacts no longer work for the company. 
 
 
 ## Clean up
