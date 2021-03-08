@@ -1,4 +1,4 @@
--
+---
 lab:
     title: 'Write queries with joins and subqueries'
     module: 'Module 3: Query multiple tables in Transact-SQL'
@@ -97,5 +97,5 @@ Modify the query to return information about the oldest orders. That query shoul
 
 Modify the query again to return information about the order with the highest freight charge. 
 
-To finish this exercise select **Done** below.Mul
+To finish this exercise select **Done** below.
 
