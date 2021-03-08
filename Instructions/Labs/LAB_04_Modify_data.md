@@ -94,6 +94,7 @@ Drop the table you created in this exercise:
 
 ```tsql
 DROP TABLE HR.EmployeesTemp;
+DROP TABLE Sales.CustomersTemp;
 ```
 
 To finish this exercise select **Done** below.
