@@ -24,13 +24,13 @@ Select the icon for Azure Data Studio. The tool will open to a Welcome screen. I
 From the **File** menu, select **New Query**. You should now see a blank query window. 
 
 ## Execute simple queries
-The queries will use a sample database called _MyStore_. Although there are about a dozen user tables in this database, we’ll only be working with a couple of them in this exercise. We’ll be using the _Customers_ and the _OrderDetails_ tables. 
+The queries will use a sample database called _MyStore_. Although there are about a dozen user tables in this database, we’ll only be working with a couple of them in this exercise. We’ll be using the _Customers_ and the _Employees_ tables. 
 
 For the queries we are using, you can try typing them in directly or you can select File/Open File, and navigate to D:\Lab Code\Modify data. Double-click on the file script4.sql and it will be loaded into a new query window.
 
 Remember that you can run an entire script at once, which will be multiple queries in this case. Or you can highlight a single query and select the **Run** button to execute just the highlighted query. 
 
-## Adding rows to a table
+## Add rows to a table
 
 Run the following query to create a copy of the _HR.Employees_ table called _HR.EmployeesTemp_. We will not be modifying the base tables so that you can continue to use them for other exercises. The **WHERE** clause contains an expression that will never be true, so no rows will actually be copied. We will have an empty table with the same columns as the original table.
 
@@ -72,11 +72,22 @@ Examine the row that you just inserted:
 ```tsql
 SELECT * FROM HR.EmployeesTemp;
 ```
+Write an INSERT statement that uses another table as the source of the data. Insert all rows from the _HR.Employees_ table into the new _HR.EmployeesTemp_ table. 
 
-## Updating and Delete rows 
+
+## Update and Delete rows 
+
+Run the following query to create a copy of the _Sales.Customers_ table called _Sales.CustomersTemp_. This time we will actually copy all the rows.
+
+```tsql
+SELECT * INTO Sales.CustomersTemp
+FROM 
+
+
+
 
   Task 1: Update Rows
-•	Write an UPDATE statement to update all the records in the Customers table that have a city of ‘Berlin’ and a contacttitle of ‘Sales Representative’ to have a contacttitle of ‘Sales Consultant’.
+•	Write an UPDATE statement to update all the records in the _CustomerTemp_ table that have a city of ‘Berlin’ and a contacttitle of ‘Sales Representative’ to have a contacttitle of ‘Sales Consultant’.
   Task 2: Delete Rows
 •	Write a DELETE statement to delete all the records in the PotentialCustomers table which have the contactname of ‘Taylor, Maurice’, ‘Mallit, Ken’, or ‘Tiano, Mike’, as these records have now been added to the Customers table.
 
