@@ -50,18 +50,17 @@ ORDER BY DateOfOrder DESC, CustomerID;
 
 You get a error about an invalid column name. What is the problem? 
 
-## Use the TOP option in the SELECT list
+## Use the TOP option and OFFSET - FETCH to receive a subset of the rows
 
 The sales department wants to have some additional reports that show the last invoiced orders and the top 10 percent of the most expensive products being sold.
 
-Write a SELECT statement against the Sales.Orders table, and retrieve the orderid and orderdate columns. Retrieve the 20 most recent orders, ordered by orderdate.
-3.	Execute the written statement and compare the results that you achieved with the recommended result shown in the file 72 - Lab Exercise 3 - Task 1 Result.txt.
-  Task 2: Use the OFFSET-FETCH Clause to Implement the Same Task
-1.	Write a SELECT statement to retrieve the same result as in task 1, but use the OFFSET-FETCH clause.
-2.	Execute the written statement and compare the results that you achieved with the results from task 1.
-3.	Compare the results that you achieved with the recommended result shown in the file 73 - Lab Exercise 3 - Task 2 Result.txt.
-  Task 3: Write a SELECT Statement to Retrieve the Most Expensive Products
-1.	Write a SELECT statement to retrieve the productname and unitprice columns from the Production.Products table.
+Write a SELECT statement against the _Sales.Orders_ table, and retrieve the orderid and orderdate columns. Retrieve the 20 most recent orders, ordered by _orderdate_.
+
+Use the OFFSET-FETCH clause to implement the same task: return the 20 most recent orders.
+
+Write a SELECT statement to retrieve the _productname_ and _unitprice_ columns from the _Production.Products_ table.
+
+
 2.	Execute the T-SQL statement and notice the number of the rows returned.
 3.	Modify the SELECT statement to include only the top 10 percent of products based on unitprice ordering.
 4.	Execute the written statement and compare the results that you achieved with the recommended result shown in the file 74 - Lab Exercise 3 - Task 3 Result.txt. Notice the number of rows returned.
