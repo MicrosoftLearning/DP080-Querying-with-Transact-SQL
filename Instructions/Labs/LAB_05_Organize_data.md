@@ -1,4 +1,3 @@
-
 ---
 lab:
     title: 'Organize data'
