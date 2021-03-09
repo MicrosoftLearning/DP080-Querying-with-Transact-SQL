@@ -23,7 +23,7 @@ Select the icon for Azure Data Studio. The tool will open to a Welcome screen. I
 
 From the **File** menu, select **New Query**. You should now see a blank query window. 
 
-## Use scalar functions
+## Scalar functions for replacing NULL values
 
 The queries will use a sample database called _MyStore_. Although there are about a dozen user tables in this database, we’ll only be working with a couple of them in this exercise. We’ll be using the _Orders_, _OrderDetails_ and _Customers_ tables. 
 
@@ -31,6 +31,19 @@ For the queries we are using, you can try typing them in directly or you can sel
 
 Remember that you can run an entire script at once, which will be multiple queries in this case. Or you can highlight a single query and select the **Run** button to execute just the highlighted query. 
 
-Write a SELECT statement to retrieve the _contactname_, _phone_ and _fax_ information from the _Sales.Customers_ table.N If there is a missing value in the fax column, return the value “No information”.
+Write a SELECT statement to retrieve the _contactname_, _phone_ and _fax_ information from the _Sales.Customers_ table. If there is a missing value in the fax column, return the value “No information”.
 
 Write two solutions, one using the COALESCE function and the other using the ISNULL function.
+
+## Metadata functions
+
+
+## System functions
+
+Run the following query to see the current time using four different system functions. 
+
+Which of the functions return the same exact values?  
+What is the difference between the value returned by **CURRENT_TIMESTAMP** and the value returned by **sysdatetime()**?
+When would **sysutcdatetime()** return the same value as one of the other columns? 
+
+
