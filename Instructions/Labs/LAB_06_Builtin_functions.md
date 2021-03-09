@@ -37,9 +37,9 @@ Write two solutions, one using the COALESCE function and the other using the ISN
 
 ## Metadata functions
 
-Recall the the db_id() and db_name functinos can be used with or without an argument. Without an argument they give you information about your current database; with an argument, you can specify which database you want information about. 
+Recall that the db_id() and db_name() functions can be used with or without an argument. Without an argument (that is, the parentheses are empty) they give you information about your current database; with an argument, you can specify which database you want information about. 
 
-Write a query to select from _sys.dm_exec_sessions_ system view and return the _login\name_ and _login\_time_ columns from the view, for all sessions that are in the same database as your own session is. 
+Write a query to select from the _sys.dm\_exec\_sessions_ system view and return the _login\_name_ and _login\_time_ columns from the view, for all sessions that are in the same database as your own session is. 
 
 >NOTE: Some of the rows in _sys.dm_exec_sessions_ have a 0 in the _database\_id_ column, which indicates they are background sessions not attached to a particular database. However, if you use the DB_NAME function with the _database\_id_ column as the argument, the results look like all these background sessions are in your current database. That is because DB_NAME(0) is equivalent to DB_NAME(). 
 
