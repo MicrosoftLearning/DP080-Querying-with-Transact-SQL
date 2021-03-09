@@ -48,28 +48,36 @@ WHERE DateOfOrder > 20210401'
 ORDER BY DateOfOrder DESC, CustomerID;
 ```
 
-You get a error about an invalid column name. What is the problem? 
+If you execute the query above, you will get an error about an invalid column name. What is the problem? 
 
 ## Use the TOP option and OFFSET - FETCH to receive a subset of the rows
 
-The sales department wants to have some additional reports that show the last invoiced orders and the top 10 percent of the most expensive products being sold.
+The sales department wants to have some additional reports that show the last invoiced orders and the top 15 percent of the least expensive products being sold.
 
 Write a SELECT statement against the _Sales.Orders_ table, and retrieve the orderid and orderdate columns. Retrieve the 20 most recent orders, ordered by _orderdate_.
 
 Use the OFFSET-FETCH clause to implement the same task: return the 20 most recent orders.
 
-Write a SELECT statement to retrieve the _productname_ and _unitprice_ columns from the _Production.Products_ table.
+Write a SELECT statement to retrieve the _productname_ and _unitprice_ columns from the _Production.Products_ table. Note the number of rows returned. 
 
+Modify the SELECT statement to include only the lowest 15 percent of the products based on the _unitprice_. (That is, the products with the lowest prices.) Again, note the number of rows returned.  
 
-2.	Execute the T-SQL statement and notice the number of the rows returned.
-3.	Modify the SELECT statement to include only the top 10 percent of products based on unitprice ordering.
-4.	Execute the written statement and compare the results that you achieved with the recommended result shown in the file 74 - Lab Exercise 3 - Task 3 Result.txt. Notice the number of rows returned.
-5.	Is it possible to implement this task with the OFFSET-FETCH clause?
+Modify the query to return the lowest 15 percent of the products based on _unitprice_, including all products with the same _unitprice_ value as the last one returned. 
 
-Simple group by
+Is it possible implement this task with the OFFSET-FETCH clause?
 
-GROUP BY with Having
+## Simple GROUP BY
 
+The sales department wants to know which customers are placing the most orders. 
 
+Write a query with GROUP BY to return a list of the _custid_ values and the number of orders each has placed. You should get 89 rows back. 
+
+Enhance the previous query to return the rows in order, with the customer with the most orders being first in the output. 
+
+##GROUP BY with Having
+
+Enhance the previous query to only return the _custid_ values for customers placing more than 25 orders. You should get three rows back. 
+
+To finish this exercise select **Done** below.
 
 **Done**
