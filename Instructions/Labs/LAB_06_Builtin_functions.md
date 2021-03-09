@@ -56,3 +56,4 @@ What is the difference between the value returned by **CURRENT_TIMESTAMP** and t
 When would **sysutcdatetime()** return the same value as one of the other columns? 
 
 
+To finish this exercise select **Done** below.
