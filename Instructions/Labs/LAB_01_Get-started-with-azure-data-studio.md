@@ -17,7 +17,7 @@ Select the password on the **Resources** tab for the **Administrator** account t
 
 There is an icon in the toolbar to open Azure Data Studio. 
 
-![Picture 1](../media/Module1-Unit6-picture1.png)
+![Picture 1](../images/Module1-Unit6-picture1.png)
 
 Select the icon for Azure Data Studio. The tool will open to a Welcome screen. If you get a message in the lower right corner asking if you want to enable **Preview features**, you can select either option. 
 
@@ -44,13 +44,13 @@ ORDER BY CustomerID, OrderYear;
 
 Select the Run button next to the green arrow in the upper left corner.  
 
-![Picture 2](../media/Module1-Unit6-picture2.png)
+![Picture 2](../images/Module1-Unit6-picture2.png)
 
 You will be prompted to connect to your SQL Server. Enter a single dot for the Server, which indicates your default local SQL Server. Because the Authentication type is Windows Authentication, the tool will use your login credentials from Windows and you don't need to enter anything for User name and Password. 
 
 Select **Connect**. 
 
-![Picture 3](../media/Module1-Unit6-picture3.png)
+![Picture 3](../images/Module1-Unit6-picture3.png)
 
 You should see three rows returned in the Results Window. 
 
@@ -74,7 +74,7 @@ Select the Run button. You should now see 10 rows returned because we are not fi
 
 Notice that the first line of the script specifies the database to access with the USE command. As an alternative to USE, you can select the dropdown box above the query, and see all the databases within the local SQL Server. 
 
-![Picture 4](../media/Module1-Unit6-picture4.png)
+![Picture 4](../images/Module1-Unit6-picture4.png)
 
 We will only be using the _MyStore_ database. 
 
